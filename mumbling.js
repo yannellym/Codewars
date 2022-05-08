@@ -19,3 +19,10 @@ function accum(s) {
   
   
   accum("ZpglnRxqenU") ///"Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu"
+
+
+// better answer
+
+function accum(s) {
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+}
