@@ -28,3 +28,11 @@ function findUniq(arr) {
     selectedNum = Object.entries(obj).find(num => num[1] === 1) 
   return Number(selectedNum[0])
 }
+
+
+// better solution
+
+function findUniq(arr) {
+  arr.sort((a,b)=>a-b);
+  return arr[0]==arr[1]?arr.pop():arr[0]
+}
