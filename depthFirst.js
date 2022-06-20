@@ -97,3 +97,17 @@ const depthFirstValues = (root) => {
   }
   return answer;
 };
+
+RECURSIVE
+
+const depthFirstValues = (root) => {
+  if (root === null)
+    return [];
+  
+  const leftValues = depthFirstValues(root.left);
+  const rightValues = depthFirstValues(root.right);
+  return [ root.val, ...leftValues, ...rightValues ];
+};
+n = number of nodes
+Time: O(n)
+Space: O(n)
