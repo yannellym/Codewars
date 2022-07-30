@@ -12,13 +12,13 @@ The test cases contain numbers only by mistake.
 
 def correct(s):
     answer = ""
-    for letter in s.lower():
+    for letter in s :
         if letter == "5":
-            answer+= "s"
+            answer+= "S"
         elif letter == "0":
             answer+= "O"
         elif letter == "1":
             answer += "I"
         else:
             answer += letter
-    return answer.upper()
+    return answer
