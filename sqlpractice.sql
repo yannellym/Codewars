@@ -36,3 +36,9 @@ FROM (SELECT name, CASE WHEN LEFT(UPPER(name), 1) IN ('0','1','2','3','4','5','6
 
 SELECT primary_poc, CONCAT(LEFT(primary_poc, STRPOS(primary_poc, ' ') - 1),'.', RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')),'@', name, '.com')
 FROM accounts
+
+
+# Convert to new date
+SELECT date, (SUBSTR(date, 1,2) || '-' || SUBSTR(date, 4,2) || '-' || SUBSTR(date, 7,4))::date AS new_date
+FROM sf_crime_data
+LIMIT 20
