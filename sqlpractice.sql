@@ -48,3 +48,8 @@ SELECT COALESCE(o.id, a.id) filled_id, a.name, a.website, a.lat, a.long, a.prima
 FROM accounts a
 LEFT JOIN orders o
 ON a.id = o.account_id;
+
+
+#WINDOW FUNCTIONS
+SELECT id, account_id, total, RANK() OVER (PARTITION BY account_id ORDER BY total DESC) AS total_rank
+FROM orders 
